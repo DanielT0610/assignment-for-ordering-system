@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        Admin - Food History</title>
+    <link rel="stylesheet" href="css/styles-8.css">
+</head>
+
+<body style="background-color: bisque;">
+    <header>
+        <h1 id="admin-history-title">Food Order History</h1>
+
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="info.html">Info</a>
+            </li>
+            <li>
+                <a href="staff-dashboard.html">Staff dashboard</a>
+            </li>
+        </ul>
+    </header>
+
+    <main class="dashboard-container">
+        <section class="history-section">
+            <div class="filter-controls" style="margin-bottom: 20px; display: flex; gap: 15px;">
+                <input type="text" id="search-room" placeholder="Search Room..." onkeyup="filterHistory()"
+                    style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                <input type="date" id="search-date" onchange="filterHistory()"
+                    style="padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+            </div>
+
+            <table class="history-table"
+                style="width: 100%; border-collapse: collapse; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+                <thead style="background-color: #f8f9fa;">
+                    <tr>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Ticket Time</th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Room</th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Date</th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Item</th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Total cost</th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Dietary Restrictions
+                        </th>
+                        <th style="padding: 12px; border-bottom: 2px solid #ddd; text-align: left;">Status</th>
+                    </tr>
+                </thead>
+                <tbody id="history-table-body">
+                    <!-- 資料會透過 admin-history-2.js 在這裡自動生成 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/translations.js"></script>
+    <script src="js/admin-history.js"></script>
+</body>
+
+</html>

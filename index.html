@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Food Delivery System - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/translations.js"></script>
+    <script src="js/login-script.js"></script>
+    <script src="js/patient-script.js"></script>
+    <script src="js/staff-script.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #2c3e50;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul li a:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+
+<body style="background-color:#FAEBD7;">
+
+    <div class="container">
+        <div class="header">
+            <h1 id="page-title">Hospital Food Delivery System</h1>
+            <div class="language-selector">
+                <select id="language" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="zh">中文 (Simplified Chinese)</option>
+                    <option value="zh-tw">中文 (Traditional Chinese)</option>
+                </select>
+            </div>
+
+        </div>
+        <ul>
+            <li>
+                <a href="index.html">HOME</a>
+            </li>
+            <li>
+                <a href="info.html">INFO</a>
+            </li>
+        </ul>
+        <div class="nav">
+            <button class="patient-btn" onclick="showLogin('patient')" id="patient-login-btn">Patient Login</button>
+            <button class="staff-btn" onclick="showLogin('staff')" id="staff-login-btn">Staff Login</button>
+        </div>
+        <div id="patient-login" class="login-form">
+            <h2 id="patient-login-title">Patient Login</h2>
+            <div class="form-group">
+                <label for="patient-room" id="patient-room-label">Room Number</label>
+                <input type="text" id="patient-room" placeholder="Room Number">
+            </div>
+            <div class="form-group">
+                <label for="patient-password" id="patient-password-label">Password</label>
+                <input type="password" id="patient-password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="patient-remember-me">
+                <label for="patient-remember-me" id="patient-remember-me-label">Remember Me</label>
+            </div>
+            <button class="btn" onclick="loginPatient()" id="patient-login-submit">Login</button>
+        </div>
+        <div id="staff-login" class="login-form">
+            <h2 id="staff-login-title">Staff Login</h2>
+            <div class="form-group">
+                <label for="staff-username" id="staff-username-label">Username</label>
+                <input type="text" id="staff-username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="staff-password" id="staff-password-label">Password</label>
+                <input type="password" id="staff-password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" id="staff-remember-me">
+                <label for="staff-remember-me" id="staff-remember-me-label">Remember Me</label>
+            </div>
+            <button class="btn" onclick="loginStaff()" id="staff-login-submit">Login</button>
+        </div>
+    </div>
+    <script src="js/translations.js"></script>
+    <script src="js/login-script.js"></script>
+    <script src="js/patient-script.js"></script>
+    <script src="js/staff-script.js"></script>
+</body>
+
+</html>

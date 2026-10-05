@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Dashboard - Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="header">
+        <h1 id="staff-dashboard-title">Staff Dashboard - Food Delivery</h1>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="zh">中文 (Simplified Chinese)</option>
+                <option value="zh-tw">中文 (Traditional Chinese)</option>
+            </select>
+        </div>
+        <button class="back-btn" onclick="window.location.href='index.html'" id="back-to-login-staff">Logout</button>
+    </div>
+
+    <ul class="helo">
+        <li class="helo-ul-li"><a class="helo-ul-li-a" href="index.html">Home</a></li>
+        <li class="helo-ul-li"><a class="helo-ul-li-a" href="info.html">Info</a></li>
+        <li class="helo-ul-li"><a class="helo-ul-li-a" href="admin.html">Admin only</a></li>
+    </ul>
+
+    <div class="container">
+        <h2 id="welcome-staff">Welcome, Staff!</h2>
+
+        <div class="form-group">
+            <label for="meal-management" id="manage-meals">Manage Meals</label>
+            <input type="text" id="meal-management" placeholder="Add/Edit Meal">
+            <br><br>
+            <button class="btn" onclick="addMeal()" id="add-meal">Add Meal</button>
+        </div>
+
+        <div class="meal-list">
+            <h4 id="current-meal-menu">Current Meal Menu</h4>
+            <ul id="staff-meals">
+                <li>Chicken Salad <button class="btn" onclick="removeMeal(this)">Remove</button></li>
+                <li>Vegetable Soup <button class="btn" onclick="removeMeal(this)">Remove</button></li>
+                <li>Fish with Rice <button class="btn" onclick="removeMeal(this)">Remove</button></li>
+            </ul>
+        </div>
+
+        <!-- Moved the Menu Management section inside the main container -->
+        <h2>Menu Management</h2>
+        <div class="form-container">
+            <h3>Update Food Price</h3>
+            <form id="update-price-form">
+                <label for="foodIdToUpdate">Food ID:</label>
+                <input type="text" id="foodIdToUpdate" required>
+                
+                <label for="newPrice">New Price ($):</label>
+                <input type="number" id="newPrice" step="0.01" required>
+                
+                <button type="submit">Update Price</button>
+            </form>
+        </div>
+
+        <div class="order-list">
+            <h4 id="pending-orders">Pending Orders</h4>
+            <ul id="staff-orders">
+                <!-- Orders will be added here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <!-- Note: You probably don't need login-script or patient-script on the staff page -->
+    <!-- <script src="js/login-script.js"></script> -->
+    <!-- <script src="js/patient-script.js"></script> -->
+    <script src="js/staff-script.js"></script>
+
+</body>
+</html>

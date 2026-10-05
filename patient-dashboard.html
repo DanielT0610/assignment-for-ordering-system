@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard - Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1 id="patient-dashboard-title">Patient Dashboard - Food Delivery</h1>
+        <div class="language-selector">
+            <select id="language" onchange="changeLanguage()">
+                <option value="en">English</option>
+                <option value="zh">简体中文</option>
+                <option value="zh-tw">繁體中文</option>
+            </select>
+        </div>
+        <div>
+            <button id="toggle-font-btn" onclick="toggleFontSize()"
+                style="padding: 10px 20px; font-size: 16px; background-color: #5bc0de; color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                Large Font (1.5x)
+            </button>
+            <button id="tap-read-btn" onclick="toggleTapToRead()"
+                style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
+                👆 Click to speech (off) </button>
+        </div>
+        <button class="back-btn" onclick="window.location.href='index.html'" id="back-to-login">Logout</button>
+    </div>
+
+
+    <div class="container">
+        <h2 id="welcome-patient">Welcome, Patient!</h2>
+
+        <div class="form-group">
+            <label for="meal-date" id="select-meal-date">Select Date</label>
+            <input type="date" id="meal-date">
+        </div>
+
+        <div class="form-group">
+            <label for="meal-time" id="select-meal-time">Select Meal Time</label>
+            <select id="meal-time">
+                <option value="" id="select-meal-time-option">Select Meal Time</option>
+                <option value="breakfast" id="breakfast-option">Breakfast</option>
+                <option value="lunch" id="lunch-option">Lunch</option>
+                <option value="dinner" id="dinner-option">Dinner</option>
+            </select>
+        </div>
+
+        <div class="meal-list">
+            <h4 id="available-meals">Available Meals</h4>
+            <ul id="meals">
+                <li>
+                    <span id="chicken-salad">Chicken Salad $60HKD</span>
+                    <div>
+                        <button class="btn meal-btn" onclick="addToCart('Chicken Salad')">Add to Cart</button>
+                        <input type="number" id="chicken-salad-quantity" min="1" value="1"
+                            style="width: 50px; text-align: center;">
+                    </div>
+                </li>
+                <li>
+                    <span id="vegetable-soup">Vegetable Soup $42HKD</span>
+                    <div>
+                        <button class="btn meal-btn" onclick="addToCart('Vegetable Soup')">Add to Cart</button>
+                        <input type="number" id="vegetable-soup-quantity" min="1" value="1"
+                            style="width: 50px; text-align: center;">
+                    </div>
+                </li>
+                <li>
+                    <span id="fish-with-rice">Fish with Rice $67HKD</span>
+                    <div>
+                        <button class="btn meal-btn" onclick="addToCart('Fish with Rice')">Add to Cart</button>
+                        <input type="number" id="fish-with-rice-quantity" min="1" value="1"
+                            style="width: 50px; text-align: center;">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="cart-section">
+            <h4 id="your-cart">Your Cart</h4>
+            <ul id="cart-items">
+                <!-- Cart items will be added here -->
+            </ul>
+            <div class="cart-summary">
+                <h3>Total Cost: $<span id="total-cost">0.00</span></h3>
+            </div>
+            <div class="form-group">
+                <label for="delivery-option" id="delivery-option-label">Delivery Option</label>
+                <select id="delivery-option">
+                    <option value="self-pickup" id="self-pickup-option">Self-Pickup</option>
+                    <option value="home-delivery" id="home-delivery-option">Delivery</option>
+                </select>
+            </div>
+            <div class="form-group" id="delivery-details-group" style="display: none;">
+                <label for="delivery-details" id="delivery-details-label">Delivery Details</label>
+                <textarea id="delivery-details"
+                    placeholder="Enter delivery details (e.g., bed number, room number)..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dietary-restrictions" id="dietary-restrictions-label">Dietary Restrictions</label>
+                <textarea id="dietary-restrictions" placeholder="Enter any dietary restrictions..."></textarea>
+            </div>
+
+            <button class="btn" onclick="submitOrder()" id="submit-order">Submit Order</button>
+        </div>
+
+        <div class="order-list">
+            <h4 id="your-orders">Your Orders</h4>
+            <ul id="orders">
+                <!-- Orders will be added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="js/translations.js"></script>
+    <script src="js/patient-script.js"></script>
+
+    </button>
+</body>
+
+</html>
